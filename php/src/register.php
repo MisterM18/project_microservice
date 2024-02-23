@@ -21,12 +21,12 @@ if(isset($_SESSION['id'])){
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
+    
     <script src="scripts.js"></script>
 </head>
 
 <body>
     <div class="container" >
-        <h2 style="text-align: center; color: #fff;">Webboard</h2>
         <?php include "nav.php"; ?>
         <?php
                     if(isset($_SESSION['add_login'])){
@@ -43,8 +43,9 @@ if(isset($_SESSION['id'])){
                 ?>
                 <br>
                 <br><center>
-       <div class="wrapper">
+       <div class="card-register">
             <div class="form-box">
+            <br>
                 <h2 style="color:#fff;"><center>Register</center></h2>
                 <form action="register_save.php" method="post">
                     <div class="input-box">
@@ -62,37 +63,43 @@ if(isset($_SESSION['id'])){
                         <label>Email</label>
                     </div>
                     <div class="input-box">
-                        <!-- <span class="input-group-text" onclick="password_Show_hide();">
-                                        <i class="bi bi-eye-fill" id="show_eye"></i>
-                                        <i class="bi bi-eye-slash-fill d-none " id="hide_eye"></i>
-                         </span> -->
                         <input type="password" name="pwd" required>
                         <label>Password</label>
                         
                     </div>
                     <div class="input-box">
+                        <input type="password" name="pwd" required>
+                        <label>ConfirmPassword</label>
+                        
+                    </div>
+                   
+                    <div class="input-box">
                         <span class="icon"></span>
                         <input type="text" name="namelastname" required>
                         <label>Name & Surname</label>
                     </div>
-                    <label class="col-lg-3 form-label" style="color:#fff;">Geneal</label>
-                                <div class="col-lg-9">
-                                    <div class="form-check" style="color:#fff;" >
-                                        <input type="radio" name="gender" value="m" class="form-check-input" required>
-                                        <label class="form-check-label">Male</label>
-                                    </div>
-                                    <div class="form-check" style="color:#fff;">
-                                        <input type="radio" name="gender" value="f" class="form-check-input" required>
-                                        <label class="form-check-label">Female</label>
-                                    </div>
-                                    <div class="form-check" style="color:#fff;">
-                                        <input type="radio" name="gender" value="o" class="form-check-input" required>
-                                        <label class="form-check-label">Other</label>
-                                    </div>
-                                </div>
-                    <button type="submit" class="btn">Register
-
-                    </button>
+                    <div class="input-box">
+                        <span class="icon"></span>
+                        <input type="text" name="phoneNumber" required>
+                        <label>PhoneNumber</label>
+                    </div>
+                    <div class="form-wrapper">
+                        <select name id class="form-control">
+                            <option   option value disabled selected> Select Your Gender</option required>
+                            <option value="m">Male</option>
+                            <option value="f">Female</option>
+                            <option value="o">Other</option>
+                        </select>
+                        <i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+                    </div>
+                                <br>
+                                <br>
+                    <button type="submit" class="btn">Register</button>
+                    <br>
+                    <br>
+                        <div style="color:#fff;"> 
+                            if your have account <a href="login.php"> login </a> here 
+                        </div>
                 </form>
             </div>
            
